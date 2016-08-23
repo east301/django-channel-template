@@ -1,0 +1,71 @@
+#
+# (c) $year$ $name$
+#
+# This file is part of $name$,
+# released under Apache License Version 2.0 (http://www.apache.org/licenses/LICENCE).
+#
+# ====
+#
+# docker compose for $name$-server deployment
+#
+
+frontend:
+  image: $author$/$name$-server
+  command: /opt/$name$/docker/run-frontend.sh
+  env_file:
+    - ./env
+  ports:
+    - "8080:8080"
+  links:
+    - mysql
+    - redis
+  volumes:
+    - "./config:/etc/$name$:ro"
+    - "./media:/opt/$name$/media"
+    - "./static:/opt/$name$/static"
+
+channel-worker:
+  image: $author$/$name$-server
+  command: /opt/$name$/docker/run-channel-worker.sh
+  env_file:
+    - ./env
+  links:
+    - mysql
+    - redis
+  volumes:
+    - "./config:/etc/$name$:ro"
+    - "./media:/opt/$name$/media"
+    - "./static:/opt/$name$/static"
+
+job-worker:
+  image: $author$/$name$-server
+  command: /opt/$name$/docker/run-job-worker.sh
+  env_file:
+    - ./env
+  links:
+    - mysql
+    - redis
+  volumes:
+    - "./config:/etc/$name$:ro"
+    - "./media:/opt/$name$/media"
+    - "./static:/opt/$name$/static"
+
+mysql:
+  image: mysql
+  command:
+    - --character-set-server=utf8mb4
+    - --collation-server=utf8mb4_unicode_ci
+    - --skip-character-set-client-handshake
+  env_file:
+    - ./env
+  volumes:
+    - "./config:/etc/$name$:ro"
+    - "./mysql:/var/lib/mysql"
+
+redis:
+  image: redis
+  env_file:
+    - ./env
+  volumes:
+    - "./config:/etc/$name$:ro"
+    - "./redis:/data"

@@ -1,0 +1,13 @@
+{
+  "name": "$name$",
+  "version": "0.0.0",
+  "description": "$name$",
+  "author": "$author$",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "bootswatch": "^3.3.7",
+    "jquery": "^2.2.4",
+    "vue": "^1.0.26"
+  }
+}
