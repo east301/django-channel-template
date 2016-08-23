@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'django_gravatar',
     'rest_framework',
 
+    '$name$.apps.common',
     '$name$.apps.vendor'
 ]
 
