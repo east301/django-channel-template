@@ -86,9 +86,9 @@ CHANNEL_LAYERS = {
     'default': {
         'BACKEND': 'asgi_redis.RedisChannelLayer',
         'ROUTING': '$name$.routing.channel_routing',
-        'CONFIG': [
-            'redis://127.0.0.1:{}/0'.format(REDIS_PORT)
-        ]
+        'CONFIG': {
+            'hosts': ['redis://127.0.0.1:{}/0'.format(REDIS_PORT)]
+        }
     }
 }
 
