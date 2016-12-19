@@ -75,7 +75,7 @@ setup(
     # package data
     packages=find_packages(),
     package_data=find_package_data(),
-    install_requires=read_requirements('requirements-common.txt'),
+    install_requires=read_requirements('requirements', 'common.txt'),
 
     # CLI
     entry_points={

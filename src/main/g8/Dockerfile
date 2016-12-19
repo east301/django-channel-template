@@ -16,7 +16,7 @@ ADD ./docker /opt/$name$/docker
 RUN apt-get update\
     && apt-get install -y file gcc\
     && pip install /opt/$name$/docker/$name$-\$VERSION-py3-none-any.whl\
-    && pip install -r /opt/$name$/docker/requirements-production.txt\
+    && pip install -r /opt/$name$/docker/requirements/production.txt\
     && apt-get remove -y gcc\
     && apt-get autoremove -y\
     && apt-get clean -y\

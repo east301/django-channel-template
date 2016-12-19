@@ -34,8 +34,8 @@ make-temporary-directory:		## Makes a directory to store temporary files
 	mkdir -p temporary
 
 install-python-dependencies:	## Installs Python dependencies
-	pip install -r requirements-common.txt
-	pip install -r requirements-development.txt
+	pip install -r requirements/common.txt
+	pip install -r requirements/development.txt
 
 install-node-dependencies:		## Installs Node dependencies
 	npm install
@@ -102,7 +102,7 @@ build-wheel:
 build-docker-image:
 	make build-wheel
 	cp ./dist/*.whl ./docker
-	cp ./requirements-production.txt ./docker
+	cp ./requirements/production.txt ./docker/requirements-production.txt
 	cp ./tools/scripts/create-superuser.py ./docker
 	chmod +x ./docker/create-superuser.py
 	docker build -t \${DOCKER_IMAGE_NAME}:\${DOCKER_IMAGE_TAG} .
