@@ -9,7 +9,7 @@ import os
 
 import redislite
 
-from .settings_common import *  # NOQA
+from .common import *   # NOQA
 
 
 # ================================================================================

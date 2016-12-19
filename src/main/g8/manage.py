@@ -8,7 +8,7 @@
 
 if __name__ == '__main__':
     import os
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', '$name$.settings_development')
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', '$name$.settings.development')
 
     from $name$.cli import main
     main()

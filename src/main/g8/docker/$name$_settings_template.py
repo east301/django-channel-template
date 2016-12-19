@@ -9,7 +9,7 @@ import os
 
 import pymysql
 
-from $name$.settings_common import *     # NOQA
+from $name$.settings.common import *     # NOQA
 
 
 # ================================================================================

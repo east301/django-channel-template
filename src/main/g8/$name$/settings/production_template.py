@@ -5,7 +5,7 @@
 # released under Apache License Version 2.0 (http://www.apache.org/licenses/LICENCE).
 #
 
-from $name$.settings_common import *     # NOQA
+from $name$.settings.common import *     # NOQA
 
 
 # ================================================================================

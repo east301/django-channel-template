@@ -12,7 +12,7 @@
 # config
 # ================================================================================
 
-DJANGO_SETTINGS_MODULE := $name$.settings_development
+DJANGO_SETTINGS_MODULE := $name$.settings.development
 
 DOCKER_IMAGE_NAME := $author$/$name$-server
 DOCKER_IMAGE_TAG := latest
